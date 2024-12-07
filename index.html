@@ -4,52 +4,138 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohan Jakkal | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css">
     <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
         header {
-            background: linear-gradient(90deg, #0672cb, #0c32a4);
+            background: linear-gradient(120deg, #0672cb, #0c32a4);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 2rem 1rem;
+            position: relative;
         }
         header h1 {
-            margin: 0;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
+        header p {
+            font-size: 1.2rem;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            right: 0;
+            height: 2rem;
+            background: white;
+            border-radius: 50% 50% 0 0;
+        }
+
+        /* Section Styles */
         section {
-            padding: 2rem;
+            padding: 2rem 1rem;
+            text-align: center;
         }
         .section-title {
             font-size: 2rem;
             color: #0672cb;
             margin-bottom: 1rem;
         }
-        .timeline ul {
-            padding: 0;
-            list-style: none;
+        .divider {
+            height: 4px;
+            width: 50px;
+            background: #0672cb;
+            margin: 1rem auto 2rem;
+            border-radius: 5px;
         }
-        .timeline li {
-            margin-bottom: 1.5rem;
+
+        /* Timeline */
+        .timeline {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .timeline li h4 {
+        .timeline-item {
+            margin-bottom: 2rem;
+        }
+        .timeline-item h4 {
+            font-size: 1.5rem;
             color: #0c32a4;
         }
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 1.5rem;
+        .timeline-item p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+        .timeline-item ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: #555;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project h4 {
+            font-size: 1.3rem;
+            color: #0c32a4;
+        }
+        .project p {
+            color: #555;
+            margin: 0.5rem 0 1rem;
+        }
+        .project a {
             color: #0672cb;
-            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-icons a {
+            color: #0672cb;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
         .social-icons a:hover {
             color: #0c32a4;
         }
+
+        /* Footer */
         footer {
             background: #0672cb;
             color: white;
@@ -59,7 +145,7 @@
         }
         footer a {
             color: white;
-            text-decoration: none;
+            font-weight: bold;
         }
         footer a:hover {
             text-decoration: underline;
@@ -67,62 +153,73 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <h1>Rohan Jakkal</h1>
         <p>Computer Science Student | Software Engineer | AI Enthusiast</p>
     </header>
+
+    <!-- About Section -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <p>Hello! I'm Rohan Jakkal, a passionate Computer Science student at the University of Texas at Dallas. I specialize in AI/ML, software development, and cybersecurity. My goal is to create impactful solutions that improve lives and enhance technology experiences.</p>
+        <div class="divider"></div>
+        <p>Hello! I'm Rohan Jakkal, a Computer Science student at the University of Texas at Dallas. I specialize in AI/ML, software development, and cybersecurity. My goal is to create impactful solutions that improve lives and enhance technology experiences.</p>
     </section>
+
+    <!-- Experience Section -->
     <section id="experience">
         <h2 class="section-title">Experience</h2>
+        <div class="divider"></div>
         <div class="timeline">
-            <ul>
-                <li>
-                    <h4>Dell Technologies</h4>
-                    <p><b>Research Engineer Intern</b> | May 2024 - August 2024</p>
-                    <ul>
-                        <li>Optimized AI models for embedded systems, improving inference efficiency by 50%.</li>
-                        <li>Contributed to internal research and Dell proprietary solutions.</li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>Dell Technologies</h4>
-                    <p><b>Software Engineer Intern</b> | May 2023 - August 2023</p>
-                    <ul>
-                        <li>Redesigned cloud deployment systems, reducing deployment time by 97%.</li>
-                        <li>Integrated PostgreSQL and RabbitMQ for seamless communication.</li>
-                    </ul>
-                </li>
-                <li>
-                    <h4>UTD Cybersecurity Club</h4>
-                    <p><b>Vice-President</b> | August 2021 - Present</p>
-                    <ul>
-                        <li>Organized workshops with 100+ attendees, fostering hands-on cybersecurity learning.</li>
-                        <li>Collaborated with industry experts to enhance community engagement.</li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="timeline-item">
+                <h4>Dell Technologies</h4>
+                <p><b>Research Engineer Intern</b> | May 2024 - August 2024</p>
+                <ul>
+                    <li>Optimized AI models for embedded systems, improving inference efficiency by 50%.</li>
+                    <li>Contributed to internal research and Dell proprietary solutions.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h4>Dell Technologies</h4>
+                <p><b>Software Engineer Intern</b> | May 2023 - August 2023</p>
+                <ul>
+                    <li>Redesigned cloud deployment systems, reducing deployment time by 97%.</li>
+                    <li>Integrated PostgreSQL and RabbitMQ for seamless communication.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <h4>UTD Cybersecurity Club</h4>
+                <p><b>Vice-President</b> | August 2021 - Present</p>
+                <ul>
+                    <li>Organized workshops with 100+ attendees, fostering hands-on cybersecurity learning.</li>
+                    <li>Collaborated with industry experts to enhance community engagement.</li>
+                </ul>
+            </div>
         </div>
     </section>
+
+    <!-- Projects Section -->
     <section id="projects">
         <h2 class="section-title">Projects</h2>
-        <ul>
-            <li>
-                <h4><b>DNS Wall</b></h4>
+        <div class="divider"></div>
+        <div class="projects">
+            <div class="project">
+                <h4>DNS Wall</h4>
                 <p>Developed a high-speed, secure DNS service surpassing industry leaders with advanced malware protection.</p>
                 <a href="https://dnswall.privatebrowsing.org" target="_blank">Learn more</a>
-            </li>
-            <li>
-                <h4><b>High-Speed FPGA Arithmetic Engine</b></h4>
+            </div>
+            <div class="project">
+                <h4>High-Speed FPGA Arithmetic Engine</h4>
                 <p>Designed a 16-bit calculator using Verilog on an FPGA board for nanosecond-speed arithmetic.</p>
                 <a href="https://github.com/SharpPig/basys-3-fpga-board-16-bit-calculator" target="_blank">GitHub</a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2 class="section-title">Contact</h2>
+        <div class="divider"></div>
         <p>If you'd like to connect or learn more about my work, feel free to reach out!</p>
         <div class="social-icons">
             <a href="mailto:RohanJakkal@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -130,9 +227,10 @@
             <a href="https://linkedin.com/in/Rohan-Jakkal" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Rohan Jakkal. <a href="mailto:RohanJakkal@gmail.com">Contact Me</a></p>
     </footer>
 </body>
 </html>
-test
